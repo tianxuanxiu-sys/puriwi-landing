@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PURIWI ROAD — 야간안전 유막제거티슈</title>
+<meta name="description" content="비 오는 밤, 앞유리가 번지는 이유가 있습니다. 출발 전 한 장으로 유막제거 끝. 체험단 50명 한정 모집.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0C1420;
+    --bg2: #111B2C;
+    --bg3: #162035;
+    --text: #F0EBE0;
+    --text-muted: #8A9BB0;
+    --text-dim: #5A6A7E;
+    --accent: #00C8E0;
+    --accent2: #1D9E75;
+    --border: rgba(0,200,224,0.15);
+    --serif: 'Noto Serif KR', Georgia, serif;
+    --sans: 'Noto Sans KR', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 2.5rem;
+    background: rgba(12,20,32,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .logo {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .logo span { color: var(--text-muted); font-weight: 300; }
+
+  /* SECTIONS */
+  section { padding: 6rem 2rem; }
+  .inner { max-width: 680px; margin: 0 auto; }
+  .inner-wide { max-width: 900px; margin: 0 auto; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(0,200,224,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-divider {
+    width: 36px; height: 1.5px;
+    background: var(--accent);
+    margin: 0 auto 2.5rem;
+    opacity: 0.7;
+  }
+  .hero-quote {
+    font-family: var(--serif);
+    font-size: clamp(1.35rem, 3.5vw, 2rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+  }
+  .hero-sub {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    line-height: 1.9;
+    margin: 2rem 0 2.8rem;
+  }
+  .hero-cta-label {
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  /* CTA BUTTON */
+  .btn-kakao {
+    display: inline-block;
+    background: var(--accent);
+    color: #0C1420;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 1rem 2.8rem;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+  .btn-kakao:hover { opacity: 0.88; transform: translateY(-1px); }
+  .btn-sub {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-top: 0.7rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+  }
+
+  /* PROBLEM SECTION */
+  .problem-section { background: var(--bg2); }
+  .problem-heading {
+    font-family: var(--serif);
+    font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+  }
+  .problem-body {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 2;
+    margin-bottom: 1.2rem;
+  }
+  .problem-body em {
+    font-style: normal;
+    color: var(--text);
+    font-weight: 400;
+  }
+  .highlight-box {
+    border-left: 2px solid var(--accent);
+    padding: 1.2rem 1.5rem;
+    margin: 2.5rem 0;
+    background: rgba(0,200,224,0.04);
+  }
+  .highlight-box p {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  /* STORY SECTION */
+  .story-section { background: var(--bg3); }
+  .story-heading {
+    font-family: var(--serif);
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 1.6rem;
+    line-height: 1.6;
+  }
+  .story-body {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 2.1;
+    margin-bottom: 1rem;
+  }
+  .story-accent {
+    font-size: 0.9rem;
+    color: var(--accent2);
+    font-weight: 500;
+    font-style: italic;
+    margin: 1.5rem 0;
+  }
+  .story-stat {
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    border-top: 0.5px solid var(--border);
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  /* BEFORE AFTER */
+  .ba-section { background: var(--bg2); }
+  .ba-heading {
+    font-family: var(--serif);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+  }
+  .ba-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  @media (max-width: 600px) { .ba-grid { grid-template-columns: 1fr; } }
+  .ba-card {
+    padding: 2rem 1.5rem;
+    border: 0.5px solid var(--border);
+    background: var(--bg3);
+  }
+  .ba-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .ba-card.after .ba-tag { color: var(--accent); }
+  .ba-card p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 2;
+  }
+  .ba-card.after p { color: var(--text); }
+  .ba-card.after {
+    border-color: rgba(0,200,224,0.3);
+    background: rgba(0,200,224,0.04);
+  }
+  .ba-card.after em {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--accent);
+    font-size: 0.95rem;
+  }
+
+  /* REVIEW */
+  .review-section { background: var(--bg); }
+  .review-heading {
+    font-family: var(--serif);
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 0.6rem;
+  }
+  .review-sub {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.03em;
+  }
+  .review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .review-card {
+    padding: 1.5rem 1.2rem;
+    border: 0.5px solid var(--border);
+    background: var(--bg2);
+  }
+  .review-from {
+    font-size: 0.68rem;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+  .review-card q {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.9;
+    quotes: '\201C' '\201D';
+  }
+  .review-common {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.9;
+    margin-top: 1.5rem;
+  }
+  .review-common em {
+    font-style: normal;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* PROGRAM */
+  .program-section { background: var(--bg3); }
+  .program-heading {
+    font-family: var(--serif);
+    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+  }
+  .step-list { list-style: none; margin-bottom: 2rem; }
+  .step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1rem 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .step-item:first-child { border-top: 0.5px solid var(--border); }
+  .step-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #0C1420;
+    font-size: 0.75rem;
+    font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .step-content { flex: 1; }
+  .step-label {
+    font-size: 0.68rem;
+    color: var(--text-dim);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+  .step-title {
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 400;
+  }
+  .program-body {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 2;
+    margin-bottom: 0.5rem;
+  }
+  .program-accent {
+    font-size: 0.9rem;
+    color: var(--accent2);
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  /* INCLUDES */
+  .includes-section { background: var(--bg2); }
+  .includes-heading {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+  .check-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem 2rem;
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 500px) { .check-grid { grid-template-columns: 1fr; } }
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .check-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+  .free-note {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    font-style: italic;
+    margin-top: 1rem;
+  }
+
+  /* FINAL CTA */
+  .final-section {
+    background: var(--bg);
+    text-align: center;
+    padding: 7rem 2rem;
+  }
+  .final-heading {
+    font-family: var(--serif);
+    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+    font-weight: 300;
+    color: var(--text);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  .final-sub {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    line-height: 1.9;
+  }
+  .final-accent {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-style: italic;
+    margin-bottom: 2.5rem;
+    display: block;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg);
+    border-top: 0.5px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+  }
+  footer p {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    letter-spacing: 0.06em;
+  }
+
+  /* FADE IN */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">PURIWI ROAD <span>/ Night Guard</span></div>
+  <div style="font-size:0.72rem;color:var(--text-dim);letter-spacing:0.1em;">puriwi.co.kr</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="inner" style="text-align:center;">
+    <div class="hero-divider"></div>
+    <p class="hero-quote fade-in">"비가 오는데 와이퍼를 켜면<br>오히려 더 번지는 건 왜일까요?"</p>
+    <p class="hero-quote fade-in" style="margin-top:0.5rem;">"야간에 맞은편 불빛이<br>사방으로 퍼져 보이는 건 왜일까요?"</p>
+    <p class="hero-sub fade-in">
+      차량 앞유리에 쌓인 유막 때문입니다.<br>
+      와이퍼가 아니라, 유리 표면의 문제입니다.
+    </p>
+    <div class="hero-cta-label fade-in">체험단 50명 한정 모집</div>
+    <a href="http://pf.kakao.com/_xoxhwxlX" target="_blank" class="btn-kakao fade-in">카카오채널 추가하고 먼저 받아보기</a>
+    <span class="btn-sub fade-in">무료 체험 · 50명 한정 · 5월 입고 후 순차 발송</span>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem-section">
+  <div class="inner fade-in">
+    <p class="section-label">Night Guard</p>
+    <h2 class="problem-heading">혹시, 이런 경험 있으신가요?</h2>
+    <p class="problem-body">
+      비 오는 밤 와이퍼를 켰는데 <em>오히려 더 번지거나</em>,<br>
+      야간에 마주 오는 차 불빛이 퍼져서 <em>순간 앞이 보이지 않거나</em>,<br>
+      세차를 해도 며칠 지나면 앞유리에 <em>기름 얼룩이 또 생기거나</em>.
+    </p>
+    <div class="highlight-box">
+      <p>"당신의 잘못이 아닙니다."<br><br>
+      문제는 와이퍼가 아니라,<br>
+      앞유리 표면에 쌓인 유막 때문입니다.</p>
+    </div>
+    <p class="problem-body">
+      유막은 배기가스, 기름 미스트, 각종 오염물질이 유리 표면에 얇게 굳은 층입니다.<br>
+      일반 세차로는 잘 지워지지 않고, <em>야간과 빗길에서 빛을 사방으로 난반사</em>시킵니다.
+    </p>
+    <p class="problem-body">
+      검색해봐도 답은 잘 안 나와요.<br>
+      "세차장 가서 유막 제거 시공 받으세요"라는 말만 돌아올 뿐.
+    </p>
+    <p class="problem-body">
+      야간 운전이 잦은 분, 배달·화물로 매일 차를 모는 분—<br>
+      <em>세차장까지 갈 시간이 없는 분들을 위해</em> 만들었습니다.
+    </p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-section">
+  <div class="inner fade-in">
+    <p class="section-label">욥바코리아 · PURIWI ROAD</p>
+    <h2 class="story-heading">왜 이 제품을 만들었는가</h2>
+    <p class="story-body">
+      저는 배달·화물 운전자들이 야간에 앞유리가 번지는 것을 알면서도,
+      아무것도 못 하고 그냥 운전하고 있다는 걸 알았습니다.
+    </p>
+    <p class="story-body">
+      세차장 유막 시공은 비싸고, 시간이 걸립니다.
+      시중에 있는 유막제거제는 따로 도구가 필요하거나, 쓰기 번거롭습니다.
+      유막제거 물티슈는 있지만—
+      <em>야간 안전을 진지하게 소구한 제품은 없었습니다.</em>
+    </p>
+    <p class="story-accent">
+      "출발 전 한 장이면 됩니다."<br>
+      이 한 문장을 만들기 위해 제품을 기획했습니다.
+    </p>
+    <p class="story-body">
+      성분을 직접 개발하고, 안전확인대상 생활화학제품 인증을 받고,
+      생산물배상책임보험 1억 원에 가입했습니다.
+      포름알데히드 미검출 확인도 마쳤습니다.
+    </p>
+    <p class="story-stat">
+      PURIWI ROAD 야간안전 유막제거티슈 — 2026년 5월 30일 출시 예정
+    </p>
+  </div>
+</section>
+
+<!-- BEFORE AFTER -->
+<section class="ba-section">
+  <div class="inner-wide fade-in">
+    <p class="section-label" style="text-align:center;">Before / After</p>
+    <h2 class="ba-heading">출발 전 한 장, 달라지는 것들</h2>
+    <div class="ba-grid">
+      <div class="ba-card">
+        <p class="ba-tag">지금 당신의 야간 운전</p>
+        <p>
+          비 오는 밤, 와이퍼를 켜면 더 번집니다.<br><br>
+          맞은편 불빛이 퍼져서<br>
+          순간 앞이 보이지 않습니다.<br><br>
+          그냥 이러려니 하고 운전합니다.<br>
+          세차 가긴 번거롭고.<br>
+          아찔한 순간이 와도 어쩔 수 없습니다.
+        </p>
+      </div>
+      <div class="ba-card after">
+        <p class="ba-tag">출발 전 한 장 후</p>
+        <p>
+          <em>"오늘은 앞유리가<br>
+          확실히 선명하네."</em><br><br>
+          유막이 제거된 앞유리는<br>
+          빛을 난반사하지 않습니다.<br><br>
+          빗길에서 와이퍼가 깔끔하게 닦입니다.<br>
+          야간이 조금 덜 무섭습니다.<br>
+          오늘도 안전하게 도착했습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW (예상 후기) -->
+<section class="review-section">
+  <div class="inner-wide fade-in">
+    <p class="section-label" style="text-align:center;">야간 운전자들의 이야기</p>
+    <h2 class="review-heading">"앞이 보이지 않아서 구매했어요."</h2>
+    <p class="review-sub">유막 문제를 알지만, 아무것도 안 하던 분들의 목소리</p>
+    <div class="review-grid">
+      <div class="review-card">
+        <p class="review-from">— 배달 운전자</p>
+        <q>비 오는 날 배달 중에 앞이 안 보일 지경이라 구매하게 됐어요. 아찔했습니다.</q>
+      </div>
+      <div class="review-card">
+        <p class="review-from">— 화물차 운전자</p>
+        <q>백미러가 안 보여서 정말 위험했어요. 소나기에 와이퍼 켜도 소용없고.</q>
+      </div>
+      <div class="review-card">
+        <p class="review-from">— 장거리 운전자</p>
+        <q>세차장은 자주 못 가고, 이런 거 차 안에 하나 있으면 안심이겠다 싶었어요.</q>
+      </div>
+    </div>
+    <p class="review-common">
+      공통점이 있어요.<br>
+      모두 <em>유막 문제를 알고 있었지만, 아무것도 안 하던 분들</em>이었어요.<br>
+      간단함이 구매를 결정했습니다.
+    </p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="program-section">
+  <div class="inner fade-in">
+    <p class="section-label">HOW TO USE</p>
+    <h2 class="program-heading">딱 두 단계, 30초면 충분합니다</h2>
+    <ul class="step-list">
+      <li class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <p class="step-label">SCRUB — 강력면</p>
+          <p class="step-title">티슈 한 장을 뽑아 손바닥으로 5~6회 눌러 성분을 활성화합니다. 원형 무늬 면으로 앞유리를 원을 그리듯 힘주어 문지릅니다.</p>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <p class="step-label">CLEAR — 맑은면</p>
+          <p class="step-title">뒤집어서 매끄러운 면으로 잔여물을 닦아냅니다. 얼룩 없이 선명하게 마무리됩니다.</p>
+        </div>
+      </li>
+    </ul>
+    <p class="program-body">
+      21×15cm 대형 사이즈로 한 장이면 앞유리 전면을 닦을 수 있습니다.<br>
+      물도 필요 없습니다. 차 안에서 바로 꺼내 쓰면 됩니다.
+    </p>
+    <p class="program-body">
+      사용 후 바로 버리지 말고,<br>
+      와이퍼 블레이드 고무면을 가볍게 한 번 닦아주세요.<br>
+      와이퍼 성능이 더 오래 유지됩니다.
+    </p>
+    <p class="program-accent">30매 = 30번의 선명한 야간 시야</p>
+  </div>
+</section>
+
+<!-- INCLUDES -->
+<section class="includes-section">
+  <div class="inner fade-in">
+    <p class="section-label">체험단 혜택</p>
+    <p class="includes-heading">무엇이 포함되어 있나요?</p>
+    <div class="check-grid">
+      <div class="check-item">
+        <div class="check-dot"></div>
+        <span>PURIWI ROAD 야간안전 유막제거티슈 30매 1팩 (무료)</span>
+      </div>
+      <div class="check-item">
+        <div class="check-dot"></div>
+        <span>출시 전 얼리버드 가격 우선 안내</span>
+      </div>
+      <div class="check-item">
+        <div class="check-dot"></div>
+        <span>HOW TO USE 가이드 카카오 발송</span>
+      </div>
+      <div class="check-item">
+        <div class="check-dot"></div>
+        <span>카카오채널 런칭 알림 가장 먼저 수신</span>
+      </div>
+    </div>
+    <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.9;">
+      조건은 하나입니다.<br>
+      사용 후 <strong style="color:var(--text);">Before/After 사진 또는 영상</strong>을 보내주시는 것입니다.<br>
+      솔직한 후기가 다음 야간 운전자에게 큰 도움이 됩니다.
+    </p>
+    <p class="free-note">카카오채널 추가 후 무료 이용 가능 · 50명 한정 · 원치 않으시면 언제든 차단 가능</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-section">
+  <div class="inner fade-in">
+    <h2 class="final-heading">
+      야간에도, 빗길에도<br>
+      출발 전 한 장으로 유막제거 끝.
+    </h2>
+    <p class="final-sub">
+      50명 한정 체험단을 모집합니다.<br>
+      제품을 가장 먼저 받아보고, 솔직하게 써주세요.
+    </p>
+    <span class="final-accent">당신의 야간 운전이 조금 덜 무섭기를 바랍니다.</span>
+    <a href="http://pf.kakao.com/_xoxhwxlX" target="_blank" class="btn-kakao">카카오채널 추가하고 먼저 받아보기</a>
+    <span class="btn-sub">하루 1분 · 50명 한정 · 무료</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>PURIWI ROAD · 욥바코리아 (Jaffa Korea Company) · puriwi.co.kr</p>
+  <p style="margin-top:0.4rem;">안전확인대상 생활화학제품 인증 · 생산물배상책임보험 1억원 가입</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
